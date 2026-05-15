@@ -41,9 +41,8 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          setup_commands:
-            - import sys
-            - sys.path.append('.')
+          options:
+            import_core_modules: true
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
