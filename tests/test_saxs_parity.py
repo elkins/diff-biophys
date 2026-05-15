@@ -26,9 +26,9 @@ def test_saxs_parity_and_gradients():
     for qi in q_values:
         f_prod = np.ones((len(coords), len(coords)))
         qr = qi * dist
-        # Standard NumPy sinc implementation: sin(x)/x
-        # Note: np.sinc(x) is sin(pi*x)/(pi*x)
-        sinc_qr = np.where(qr < 1e-4, 1.0 - (qr**2) / 6.0, np.sin(qr) / qr)
+        # Use np.errstate to suppress division by zero warnings in the reference calculation
+        with np.errstate(divide='ignore', invalid='ignore'):
+            sinc_qr = np.where(qr < 1e-4, 1.0 - (qr**2) / 6.0, np.sin(qr) / qr)
         expected_intensities.append(np.sum(f_prod * sinc_qr))
     expected_intensities = np.array(expected_intensities)
     
