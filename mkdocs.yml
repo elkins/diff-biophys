@@ -38,11 +38,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            import_core_modules: true
+  - mkdocstrings
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
