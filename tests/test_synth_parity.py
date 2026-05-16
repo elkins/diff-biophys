@@ -1,10 +1,13 @@
 import numpy as np
 import jax.numpy as jnp
-import synth_pdb.geometry.nerf as synth_nerf
-import synth_pdb.geometry.superposition as synth_sup
-import synth_nmr.rdc as synth_rdc
-import synth_nmr.j_coupling as synth_j
-import synth_pdb.geometry as synth_geom
+import pytest
+
+# Optional dependencies for parity benchmarking
+synth_nerf = pytest.importorskip("synth_pdb.geometry.nerf")
+synth_sup = pytest.importorskip("synth_pdb.geometry.superposition")
+synth_j = pytest.importorskip("synth_nmr.j_coupling")
+synth_geom = pytest.importorskip("synth_pdb.geometry")
+
 from diff_biophys.geometry import (
     position_atom_3d, kabsch_alignment, compute_bond_lengths, 
     compute_bond_angles, compute_dihedrals
