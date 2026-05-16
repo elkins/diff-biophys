@@ -50,13 +50,13 @@ To bridge the gap between static structural models and experimental solution-sta
 ## 🚀 Roadmap
 
 ### Phase 1: Foundations (Alpha)
-- [ ] Differentiable NeRF and Kabsch alignment.
-- [ ] GPU-accelerated Debye formula for SAXS.
-- [ ] Unit tests verifying parity with `synth-pdb` NumPy implementations.
+- [x] Differentiable NeRF and Kabsch alignment.
+- [x] GPU-accelerated Debye formula for SAXS.
+- [x] Unit tests verifying parity with `synth-pdb` NumPy implementations.
 
 ### Phase 2: NMR & Spectroscopy (Beta)
-- [ ] Differentiable RDC and Karplus kernels.
-- [ ] Differentiable Johnson-Bovey ring current model.
+- [x] Differentiable RDC and Karplus kernels.
+- [x] Differentiable Johnson-Bovey ring current model.
 - [ ] Integration with `synth-nmr` parameter libraries.
 
 ### Phase 3: Integration & Optimization (v1.0)
